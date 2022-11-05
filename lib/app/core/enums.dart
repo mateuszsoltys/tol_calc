@@ -1,6 +1,5 @@
 enum Norms {
-  iso22768('ISO 22768'),
-  duplo('dupki 222');
+  iso22768('ISO 22768');
 
   const Norms(this.label);
   final String label;

@@ -1,13 +1,17 @@
-import 'package:google_fonts/google_fonts.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
-import '../../core/enums.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ChooseField extends StatelessWidget {
   final String fieldName;
   final List<DropdownMenuItem<Enum>>? items;
-  const ChooseField({Key? key, required this.fieldName, required this.items})
-      : super(key: key);
+  final Object? value;
+  const ChooseField({
+    Key? key,
+    required this.fieldName,
+    required this.items,
+    required this.value,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,7 @@ class ChooseField extends StatelessWidget {
         Text(fieldName.toUpperCase(),
             style: GoogleFonts.habibi(
                 textStyle: const TextStyle(color: Colors.white))),
-        DropdownButton(items: items, onChanged: (val) {}),
+        DropdownButton(value: value, items: items, onChanged: (val) {}),
         const SizedBox(height: 10)
       ]),
     );

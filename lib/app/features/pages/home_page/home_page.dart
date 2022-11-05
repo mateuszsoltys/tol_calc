@@ -27,17 +27,19 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ChooseField(
+                        value: null,
                         fieldName: 'norma',
                         items: Norms.values.map((Norms norm) {
                           return DropdownMenuItem<Norms>(
-                              child: Text(norm.label));
+                              value: norm, child: Text(norm.label));
                         }).toList(),
                       ),
                       ChooseField(
+                        value: null,
                         fieldName: 'klasa',
                         items: NormClasses.values.map((NormClasses normClass) {
                           return DropdownMenuItem<NormClasses>(
-                              child: Text(normClass.label));
+                              value: normClass, child: Text(normClass.label));
                         }).toList(),
                       )
                     ]),
